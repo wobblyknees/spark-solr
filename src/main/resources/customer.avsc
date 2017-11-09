@@ -1,0 +1,44 @@
+[
+{
+   "namespace": "com.cloudera.customer",
+    "type": "record",
+    "name": "Name",
+    "fields" :[
+        {"name":"fname", "type":"string"},
+        {"name":"lname", "type":"string"}
+    ]     
+},
+{
+   "namespace": "com.cloudera.customer",
+    "type": "record",
+    "name": "Address",
+    "fields" : [
+         {"name":"streetno", "type":"string"},
+         {"name":"streetname", "type":"string"},
+         {"name":"city", "type":"string"}
+    ]
+},
+{   
+    "namespace": "com.cloudera.customer",
+    "type": "record",
+    "name": "Customer",
+    "fields": [
+        {   "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "Names",
+            "type" : {
+               "type": "array",
+               "items": "Name"}
+        },
+        {
+            "name": "Addresses",
+            "type" : {
+               "type": "array",
+               "items": "Address"}
+        }
+    ]
+}
+]
+
